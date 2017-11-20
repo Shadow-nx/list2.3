@@ -92,14 +92,12 @@ void find_elements(Node *first) {
 		cout<<"list don't have this element"<<endl;
 }
 void list_sort(Node *first) {
-	int dataswap=0;
 	for(Node *current=first; current!=nullptr; current=current->next) {
-		for(Node *current1=first; current1!=nullptr; current1=current1->next)
-			if((current1->data)>(current->data)) {
-				dataswap=current1->data;
-				current1->data=current->data;
-				current->data=dataswap;
+		for(Node *current1=first; current1!=nullptr; current1=current1->next) {
+			if((current->data)<(current1->data)) {
+				swap(current->data,current1->data);
 			}
+		}
 	}
 }
 void check_numbers(const char *argv,int *&numbers_array,int &numbers_count) {
